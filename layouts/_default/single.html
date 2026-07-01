@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+<style>
+body{max-width:720px;margin:40px auto;padding:0 20px;font-family:system-ui,sans-serif;line-height:1.8;color:#333;background:#fafafa}
+h1{font-size:2em}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+time{color:#888;font-size:.9em}
+.tags{margin:12px 0 24px}
+.tag{display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:.8em;margin-right:4px}
+.content{background:#fff;padding:20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.content h2{margin-top:28px}
+.content p{margin:16px 0}
+.content blockquote{border-left:3px solid #2563eb;padding-left:16px;color:#666;font-style:italic}
+.content ul{padding-left:24px}
+footer{text-align:center;margin-top:60px;color:#999;font-size:.9em}
+</style>
+</head>
+<body>
+<a href="{{ .Site.BaseURL }}">← 返回首页</a>
+<h1>{{ .Title }}</h1>
+<time>{{ .Date.Format "2006-01-02" }}</time>{{ with .Params.author }} · {{ . }}{{ end }}
+<div class="tags">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+<div class="content">{{ .Content }}</div>
+<footer><p>Powered by Hugo & GitHub Pages</p></footer>
+</body>
+</html>
