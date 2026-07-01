@@ -1,16 +1,8 @@
 baseURL = 'https://shamnick.github.io/boke/'
 languageCode = 'zh-cn'
 title = '小小人间不慌张'
-theme = 'hugo-papermod'
+disableKinds = ['taxonomy', 'term']
 
 [params]
   author = 'Shamnick'
   description = '心有山海，静而不争，自在独行。'
-
-[frontmatter]
-  date = [':filename', ':default']
-  lastmod = [':fileModTime', ':default']
-
-[markup]
-  [markup.highlight]
-    style = 'monokai'
