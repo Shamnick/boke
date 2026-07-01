@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Site.Title }}</title>
+<style>
+body{max-width:720px;margin:40px auto;padding:0 20px;font-family:system-ui,sans-serif;line-height:1.8;color:#333;background:#fafafa}
+h1{font-size:2em}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+.post{margin:24px 0;padding:16px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.post h2{margin:0;font-size:1.2em}
+.post time{font-size:.85em;color:#888}
+.tags{margin-top:8px}
+.tag{display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:.8em;margin-right:4px}
+footer{text-align:center;margin-top:60px;color:#999;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>{{ .Site.Title }}</h1>
+<p>{{ .Site.Params.description }}</p>
+<hr>
+{{ range .Pages }}
+<div class="post">
+<h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+<time>{{ .Date.Format "2006-01-02" }}</time>
+<div class="tags">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+</div>
+{{ end }}
+<footer><p>Powered by Hugo & GitHub Pages</p></footer>
+</body>
+</html>
